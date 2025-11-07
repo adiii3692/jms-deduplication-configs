@@ -1,0 +1,12 @@
+services:
+  artemis:
+    image: apache/activemq-artemis:latest
+    container_name: artemis-broker
+    ports:
+      - "61616:61616"   # Core protocol
+      - "8161:8161"     # Web Console
+    volumes:
+          - artemis-data:/var/lib/artemis-instance
+
+volumes:
+  artemis-data:
