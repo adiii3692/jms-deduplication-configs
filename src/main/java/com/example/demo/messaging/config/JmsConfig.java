@@ -19,10 +19,6 @@ public class JmsConfig {
         // with the payload being the JSON string representation of your object.
         messageConverter.setTargetType(MessageType.TEXT);
 
-        // This sets a JMS property to indicate the payload is JSON,
-        // which helps the receiver understand the message format.
-        messageConverter.setTypeIdPropertyName("JMS_TYPE");
-
         return messageConverter;
     }
 }
