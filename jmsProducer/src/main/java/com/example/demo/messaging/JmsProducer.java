@@ -17,7 +17,7 @@ public class JmsProducer{
         jmsTemplate.convertAndSend(destination, modelMessage, new MessagePostProcessor() {
             @Override
             public Message postProcessMessage(Message message) throws JMSException {
-                message.setStringProperty(org.apache.activemq.artemis.api.core.Message.HDR_DUPLICATE_DETECTION_ID.toString(), modelMessage.getId().toString());
+                message.setStringProperty(org.apache.activemq.artemis.api.core.Message.HDR_DUPLICATE_DETECTION_ID.toString(), modelMessage.getId().toString() + modelMessage.getServiceName());
                 return message;
             }
         });

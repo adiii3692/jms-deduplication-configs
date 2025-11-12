@@ -12,9 +12,13 @@ public class MessageModel {
     private String serviceName;
 
     // Set a UUID
-    public MessageModel(){
-        this.id = UUID.fromString("63703d87-b563-4e65-9e58-1e0df47b914a");
-//        this.id = UUID.randomUUID();
+    public MessageModel(UUID uuid, String serviceName){
+        if (uuid == null){
+            this.id = UUID.randomUUID();
+        }else{
+            this.id = uuid;
+        }
+        this.serviceName = serviceName;
     }
 
     @Override

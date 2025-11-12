@@ -19,6 +19,9 @@ public class JmsConfig {
         // with the payload being the JSON string representation of your object.
         messageConverter.setTargetType(MessageType.TEXT);
 
+        // Lets the consumer know what Object to map the received message to
+        messageConverter.setTypeIdPropertyName("_type");
+
         return messageConverter;
     }
 }

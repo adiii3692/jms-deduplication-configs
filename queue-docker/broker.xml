@@ -201,6 +201,9 @@ under the License.
          </security-setting>
       </security-settings>
 
+      <!-- Cache settings -->
+      <id-cache-size>3</id-cache-size>
+
       <address-settings>
          <!-- if you define auto-create on certain queues, management has to be auto-create -->
          <address-setting match="activemq.management.#">
